@@ -25,8 +25,8 @@ public class PicActivity extends AppCompatActivity {
         final ImageView mIvPic2 = (ImageView) findViewById(R.id.iv_pic2);
         ViewCompat.setTransitionName(mIvPic2, "shareImageView");
         Glide.with(this)
-                .load("https://sinostoragedev.blob.core.chinacloudapi.cn/avatar-container/201712211017377762.png")
-                .centerCrop()
+                .load("https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2625155098,2810056817&fm=27&gp=0.jpg")
+                .fitCenter()
                 .listener(new RequestListener<String, GlideDrawable>() {
 
                     @Override

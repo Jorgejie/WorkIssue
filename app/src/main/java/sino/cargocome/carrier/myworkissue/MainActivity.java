@@ -24,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
         mView = (ImageView) findViewById(R.id.iv_pic1);
 
         Glide.with(this)
-                .load("https://sinostoragedev.blob.core.chinacloudapi.cn/avatar-container/201712211017377762.png")
-                .centerCrop()
+                .load("https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2625155098,2810056817&fm=27&gp=0.jpg")
+                .fitCenter()
                 .into(mView);
     }
 
