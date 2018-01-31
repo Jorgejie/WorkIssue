@@ -9,7 +9,7 @@
 * rectclerView 的match_parent失效:
   解决方案:填充布局的方式改变一般有两种
   ```
-  View.inflate(this,item);替换为LayoutInflater.from(parent.getContext()).inflate(item, parent, false);
+  View.inflate(this,item);--->LayoutInflater.from(parent.getContext()).inflate(item, parent, false);
   ```
 * git 拉取代码出现The remote end hung up unexpectedly fatal: index-pack failed 错误的时候,一般是git的缓存出现了问题
 解决方案:执行下面命令 git config http.postBuffer 524288000
@@ -18,7 +18,17 @@
 解决方案是在根目录下加上        classpath 'com.novoda:bintray-release:0.5.0'
 
 * 阿里云上传oss遇到stream closed,根本原因未找到,不过倒是可以利用andorid studio升级到3.0版本实现,现在只是发现在我的项目中使用会出现这个问题
-之前的studio版本是2.3.2,升级之后不再出现
+之前的studio版本是2.3.2,升级之后不再出现. 后面在上线的时候,在打release包准备上线的时候,发现原先的问题就又在次出现,经过查看阿里云的log日志发现
+造成这个问题的原因是和bugtags的网络上传有冲突,问了bugtags的客服后将build里关于bugtags的配置改成
+   ```
+    bugtags {
+    mappingUploadEnabled false
+    trackingNetworkEnabled true
+    trackingNetworkExcludePackages 'com.alibaba.sdk.android.oss'
+    }
+   ```
+   这里应该是将有关bugtags的全局监控的上传模块关闭掉对阿里云的监控.   这个问题是目前碰到的最难解决的问题没有之一,只能一点点的排查
+
 
 
 
