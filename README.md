@@ -11,6 +11,8 @@
   ```
   View.inflate(this,item);--->LayoutInflater.from(parent.getContext()).inflate(item, parent, false);
   ```
+  但是条能使用第二种此时在andorid5.0的手机上会出现一个问题就是item中的文字显示不全的情况,此种情况复现需要特殊的场景(就是条目显示的字数不同的情况下但是并不是多type的形式)
+  而且使用第一种的时候相对布局的居左和居右是有效的,但是居中总是无效,但是线性布局是起作用的(原因暂时不明)
 * git 拉取代码出现The remote end hung up unexpectedly fatal: index-pack failed 错误的时候,一般是git的缓存出现了问题
 解决方案:执行下面命令 git config http.postBuffer 524288000
 
