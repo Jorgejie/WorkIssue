@@ -31,6 +31,9 @@
    ```
    这里应该是将有关bugtags的全局监控的上传模块关闭掉对阿里云的监控.   这个问题是目前碰到的最难解决的问题没有之一,只能一点点的排查
 
+*andorid 控件透明度改变注意事项:1,(例如imageView) 对iv设置背景色时要直接用#ffffff形式,不要直接饮用资源idcolor,如果引用的的话所有的引用这个id的控件透明度都会发生改变
+如果直接是有iv.getBackground().setAlpha(int),这样的话在某些手机上会失效(比如我的z17),正确的姿势是iv.getBackground().mutate().setAlpha(int).
+
 
 
 
